@@ -1,3 +1,7 @@
+![AxionAntiAFK](https://spunkyman.com/cdn/axion/AxionAntiAFK_stats.png)
+
+0ms CPU time at recurrent operation.
+
 # AxionAntiAFK
 Anti-AFK script that detects player movement, camera movement, and key presses to verify client activity and auto-kick inactive clients.
 
