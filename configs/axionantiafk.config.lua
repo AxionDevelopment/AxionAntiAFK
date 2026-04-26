@@ -19,8 +19,9 @@ AxionAntiAFKConfig.AFK_KICK_TIME = 450 -- 7.5 minute default (1 minute = 60)
 -- Type of warning message to send to the player when they reach the warning threshold
 -- WARNING_MESSAGE_TYPE options:
 -- "axionnotification" - Warning will be sent as an Axion Notification (requires AxionNotifications resource) (default)
--- "chat" - Warning will be sent as a chat message
-AxionAntiAFKConfig.WARNING_MESSAGE_TYPE = "chat"
+--     Download AxionNotifications here: https://github.com/AxionDevelopment/AxionNotifications
+-- "chat" - Warning will be sent as a chat message. No dependencies required.
+AxionAntiAFKConfig.WARNING_MESSAGE_TYPE = "axionnotification"
 
 -- Custom warning message (optional, leave empty for default)
 -- DEFAULT: "You will be kicked in {timeLeft} minutes for being AFK."
