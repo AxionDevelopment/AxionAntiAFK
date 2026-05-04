@@ -39,21 +39,21 @@ CreateThread(function()
 
         local idleTime = (GetGameTimer() - lastActivity) / 1000
 
-        if idleTime >= AxionAntiAFKConfig.AFK_WARNING_TIME and not isWarned then
+        if idleTime >= AxionAntiAFKConfig.AfkWarningTime and not isWarned then
             isWarned = true
 
-            local timeLeft = (AxionAntiAFKConfig.AFK_KICK_TIME - idleTime)
+            local timeLeft = (AxionAntiAFKConfig.AfkKickTime - idleTime)
             local minutes = math.floor((timeLeft / 60) * 2 + 0.5) / 2
 
             local warningMessage = ""
 
-            if AxionAntiAFKConfig.WARNING_MESSAGE == "" then
+            if AxionAntiAFKConfig.WarningMessage == "" then
                 warningMessage = "You will be kicked in " .. minutes .. " minutes for being AFK."
             else
-                warningMessage = AxionAntiAFKConfig.WARNING_MESSAGE:gsub("{timeLeft}", minutes)
+                warningMessage = AxionAntiAFKConfig.WarningMessage:gsub("{timeLeft}", minutes)
             end
 
-            if AxionAntiAFKConfig.WARNING_MESSAGE_TYPE == "chat" then
+            if AxionAntiAFKConfig.MessageType == "chat" then
                 TriggerEvent('chat:addMessage', {
                     color = {255, 0, 0},
                     multiline = true,
@@ -64,7 +64,7 @@ CreateThread(function()
             end
         end
 
-        if idleTime >= AxionAntiAFKConfig.AFK_KICK_TIME then
+        if idleTime >= AxionAntiAFKConfig.AfkKickTime then
             TriggerServerEvent('axionantiafk:kick')
         end
     end
