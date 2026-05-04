@@ -60,7 +60,7 @@ CreateThread(function()
                     args = {"[AFK Warning]", warningMessage}
                 })
             else
-                exports['AxionNotifications']:AxionNotify(warningMessage, "error", minutes * 60000)
+                exports['AxionNotifications']:Notify(warningMessage, "error", minutes * 60000)
             end
         end
 
